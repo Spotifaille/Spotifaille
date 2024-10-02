@@ -5,7 +5,7 @@ FROM php:7.4-apache
 # RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Copy the PHP application to the container
-COPY . /var/www/html/
+COPY src/ /var/www/html/
 
 WORKDIR /var/www/html
 
