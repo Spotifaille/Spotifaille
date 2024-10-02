@@ -12,11 +12,13 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: background 0.5s;
         }
         h1 {
             font-size: 4em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             animation: pulse 2s infinite;
+            cursor: pointer;
         }
         @keyframes pulse {
             0% {
@@ -32,7 +34,15 @@
     </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1 onclick="invertBackground()">Hello World</h1>
+    <script>
+        function invertBackground() {
+            const body = document.body;
+            const randomColor1 = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            const randomColor2 = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            body.style.background = `linear-gradient(135deg, ${randomColor1}, ${randomColor2})`;
+        }
+    </script>
 </body>
 </html>
 
