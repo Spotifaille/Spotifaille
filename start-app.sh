@@ -3,7 +3,7 @@
 # start contaienrs
 # docker-compose up -d
 
-docker run -dp 80:80 --name spotifaille test 
+docker run -dp 80:80 --name spotifaille spotifaille 
 
 
 # time to wait until the database is running well
