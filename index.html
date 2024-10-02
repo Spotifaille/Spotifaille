@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            transition: background 0.5s;
+            transition: background 2s, color 2s; /* Transition for background and color */
         }
         h1 {
             font-size: 4em;
@@ -39,11 +39,12 @@
             const body = document.body;
             const randomColor1 = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
             const randomColor2 = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            const randomFontColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
             body.style.background = `linear-gradient(135deg, ${randomColor1}, ${randomColor2})`;
+            body.style.color = randomFontColor;
         }
 
-        setInterval(invertBackground, 2000);
+        setInterval(invertBackground, 4000); // Interval of 4 seconds
     </script>
 </body>
 </html>
-
