@@ -99,7 +99,7 @@
         moveImage(); // Start the movement
         */
     </script>
-    </script>
+
     <script>
     function rgbToArray(rgb) {
         return rgb.match(/\d+/g).map(Number);
