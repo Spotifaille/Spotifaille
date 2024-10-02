@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            transition: background 2s, color 2s; /* Transition for background and color */
+            transition: background 4s ease, color 2s ease; /* Smooth background transition with color */
         }
         h1 {
             font-size: 4em;
