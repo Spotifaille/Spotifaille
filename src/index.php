@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>DevOps</title>
-    <link rel="icon" href="/image/Spotifaille.ico">
+    <link rel="icon" href="/img/Spotifaille.ico">
     <style>
         body {
             margin: 0;
@@ -35,7 +35,7 @@
 </head>
 <body>
     <div style="text-align: center;">
-        <img id="rotatingImage" src="/image/Spotifaille.png" alt="Spotifaille" style="width: 25%; height: auto;">
+        <img id="rotatingImage" src="/img/Spotifaille.png" alt="Spotifaille" style="width: 25%; height: auto;">
     </div>
     <script>
         /*spin*/
