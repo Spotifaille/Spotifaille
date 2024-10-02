@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DevOps - Spotify Tracks</title>
+    <title>DevOps</title>
     <style>
         body {
             margin: 0;
@@ -12,7 +12,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             transition: background 4s ease, color 2s ease;
         }
         h1 {
@@ -25,89 +25,28 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-        #tracks-table {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px;
+        #menu {
             margin-top: 20px;
-            max-width: 80%;
-            max-height: 400px;
-            overflow: auto;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        #menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        th {
-            background-color: rgba(0, 0, 0, 0.2);
+        #menu a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
-    <h1>Spotify Tracks</h1>
-    <div id="tracks-table"></div>
-
+    <h1>Hello World</h1>
+    <div id="menu">
+        <a href="display_tracks.php">View Spotify Tracks</a>
+    </div>
     <script>
-    // Fonction pour formater la durée en minutes:secondes
-    function formatDuration(duration_ms) {
-        const minutes = Math.floor(duration_ms / 60000);
-        const seconds = ((duration_ms % 60000) / 1000).toFixed(0);
-        return `${minutes}:${seconds.padStart(2, '0')}`;
-    }
-
-    // Fonction pour charger le fichier JSON
-    function loadJSON(callback) {
-        fetch('Spotify_songs_attributes.json')
-            .then(response => response.json())
-            .then(data => callback(data))
-            .catch(error => console.error('Error:', error));
-    }
-
-    // Fonction pour afficher le tableau des pistes
-    function displayTracks(data) {
-        const tableContainer = document.getElementById('tracks-table');
-        let tableHTML = `
-            <table>
-                <thead>
-                    <tr>
-                        <th>Track Name</th>
-                        <th>Artist Name</th>
-                        <th>Genre</th>
-                        <th>Duration</th>
-                    </tr>
-                </thead>
-                <tbody>
-        `;
-
-        data.forEach(track => {
-            tableHTML += `
-                <tr>
-                    <td>${track.trackName}</td>
-                    <td>${track.artistName}</td>
-                    <td>${track.genre}</td>
-                    <td>${formatDuration(track.duration_ms)}</td>
-                    
-                </tr>
-            `;
-        });
-
-        tableHTML += `
-                </tbody>
-            </table>
-        `;
-
-        tableContainer.innerHTML = tableHTML;
-    }
-
-    // Charger et afficher les pistes
-    loadJSON(displayTracks);
-
-    // Fonction pour l'animation du fond
     function rgbToArray(rgb) {
         return rgb.match(/\d+/g).map(Number);
     }
