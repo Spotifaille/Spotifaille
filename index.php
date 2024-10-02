@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DevOps</title>
+    <title>DevOps - Spotify Tracks</title>
     <style>
         body {
             margin: 0;
@@ -9,10 +9,11 @@
             background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: #fff;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            transition: background 4s ease, color 2s ease; /* Smooth background transition with color */
+            min-height: 100vh;
+            transition: background 4s ease, color 2s ease;
         }
         h1 {
             font-size: 4em;
@@ -20,21 +21,81 @@
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        #tracks-table {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            max-width: 80%;
+            max-height: 400px;
+            overflow: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        th {
+            background-color: rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Spotify Tracks</h1>
+    <div id="tracks-table"></div>
+
     <script>
+    // Fonction pour charger le fichier JSON
+    function loadJSON(callback) {
+        fetch('Spotify_songs_attributes.json')
+            .then(response => response.json())
+            .then(data => callback(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Fonction pour afficher le tableau des pistes
+    function displayTracks(data) {
+        const tableContainer = document.getElementById('tracks-table');
+        let tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Track Name</th>
+                        <th>Artist Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        data.forEach(track => {
+            tableHTML += `
+                <tr>
+                    <td>${track.trackName}</td>
+                    <td>${track.artistName}</td>
+                </tr>
+            `;
+        });
+
+        tableHTML += `
+                </tbody>
+            </table>
+        `;
+
+        tableContainer.innerHTML = tableHTML;
+    }
+
+    // Charger et afficher les pistes
+    loadJSON(displayTracks);
+
+    // Fonction pour l'animation du fond
     function rgbToArray(rgb) {
         return rgb.match(/\d+/g).map(Number);
     }
@@ -86,7 +147,6 @@
     }
 
     animateBackground(); // Start the animation
-</script>
-
+    </script>
 </body>
 </html>
