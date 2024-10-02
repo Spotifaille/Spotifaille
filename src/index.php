@@ -31,9 +31,26 @@
                 transform: scale(1);
             }
         }
+        #menu {
+            margin-top: 20px;
+        }
+        #menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #menu a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
+    <div id="menu">
+        <a href="display_tracks.php">View Spotify Tracks</a>
+    </div>
     <div style="text-align: center;">
         <img id="rotatingImage" src="img/Spotifaille.png" alt="Spotifaille" style="width: 25%; height: auto;">
     </div>
