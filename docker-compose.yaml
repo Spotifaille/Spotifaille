@@ -1,5 +1,4 @@
 version: '3.8'
-name: spotifaille
 services:
   web:
     image: php:7.4-apache
