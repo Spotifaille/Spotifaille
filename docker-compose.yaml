@@ -35,5 +35,5 @@ volumes:
   db-data:
 
 networks:
-  animenet:
+  spotinet:
     #driver: bridge
