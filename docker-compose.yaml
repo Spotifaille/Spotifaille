@@ -26,12 +26,13 @@ services:
       - MONGO_INITDB_DATABASE=Spotifaille
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - db-data:/data/db
     networks:
       - spotinet
     restart: on-failure
 
 volumes:
-  dbdata:
+  db-data:
 
 networks:
   animenet:
