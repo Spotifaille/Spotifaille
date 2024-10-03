@@ -1,32 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     const img = document.getElementById('rotatingImage');
     let angle = 0;
-    let speed = 0.5; // Initial speed
-    let decreasing = false;
+    let speed = 0;
+    let isDragging = false;
+    let lastMouseX = 0;
 
     function rotateImage() {
-        angle += speed;
-        img.style.transform = `rotate(${angle}deg)`;
-
-        if (decreasing) {
-            speed -= 0.1; // Decrease speed gradually
-            if (speed <= 0) {
+        if (speed !== 0) {
+            angle += speed;
+            img.style.transform = `rotate(${angle}deg)`;
+            speed *= 0.98; // Gradually slow down the rotation
+            if (Math.abs(speed) < 0.01) {
                 speed = 0;
-                decreasing = false;
-            }
-        } else {
-            speed += 0.1; // Increase speed gradually
-            if (speed >= 100) {
-                decreasing = true;
             }
         }
-
         requestAnimationFrame(rotateImage);
     }
 
-    rotateImage();
-    
+    img.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        lastMouseX = event.clientX;
+        event.preventDefault(); // Prevent default dragging behavior
+    });
 
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    document.addEventListener('mousemove', (event) => {
+        if (isDragging) {
+        const deltaX = event.clientX - lastMouseX;
+        speed = deltaX * 0.7; // Adjust the multiplier to control the sensitivity
+        lastMouseX = event.clientX;
+        event.preventDefault(); // Prevent default dragging behavior
+        }
+    });
+
+    rotateImage();
 });
     /*
     DVD move
