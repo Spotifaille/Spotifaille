@@ -4,7 +4,7 @@ db.createCollection('music'); // Create a collection named 'users'
 
 // use src/Spotify_songs_attributes.json to insert data into the collection
 print('Start inserting data into the collection');
-load('src/Spotify_songs_attributes.json');
+load('Spotify_songs_attributes.json');
 print('Data inserted successfully');
 
 // Create a unique index on the 'id' field

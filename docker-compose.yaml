@@ -10,9 +10,10 @@ services:
       - db
     environment:
       - DB_HOST=db
-      - DB_USER=user
-      - DB_PASSWORD=password
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
       - DB_NAME=Spotifaille
+      - MONGO_URI=mongodb://mongo:27017
     networks:
       - spotinet
     restart: on-failure
@@ -26,6 +27,8 @@ services:
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
       - db-data:/data/db
+    ports:
+      - "27017:27017"
     networks:
       - spotinet
     restart: on-failure
