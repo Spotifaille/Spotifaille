@@ -1,12 +1,12 @@
-version: '3'
-
+version: '3.8'
+name: spotifaille
 services:
   web:
-    build: .
+    image: php:7.4-apache
     ports:
       - "8080:80"
-#    volumes:
-#      - webdata:/var/www/php
+    volumes:
+      - ./src:/var/www/html
     depends_on:
       - db
     environment:
@@ -36,4 +36,3 @@ volumes:
 
 networks:
   spotinet:
-    #driver: bridge
