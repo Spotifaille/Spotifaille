@@ -17,3 +17,5 @@ WORKDIR /var/www/html
 # Expose port 80 for the web server
 EXPOSE 80
 
+#CMD["tail", "-f", "/dev/null"]
+
