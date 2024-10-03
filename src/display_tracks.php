@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spotify Tracks</title>
+    <title>Spotifaille</title>
+    <link rel="icon" href="/img/Spotifaille.ico">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1DB954, #191414);
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -14,6 +18,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            transition: background 4s ease, color 2s ease; /* Smooth background transition with color */
         }
         h1 {
             font-size: 3em;
@@ -55,9 +60,9 @@
     </style>
 </head>
 <body>
-    <h1>Spotify Tracks</h1>
+    <h1>Spotifaille</h1>
     <div id="tracks-table"></div>
-    <a href="index.html" id="back-link">Back to Home</a>
+    <a href="index.php" id="back-link">Back to Home</a>
 
     <script>
     // Fonction pour formater la durée en minutes:secondes
@@ -79,7 +84,7 @@
     function displayTracks(data) {
         const tableContainer = document.getElementById('tracks-table');
         let tableHTML = `
-            <table>
+            <table id="tracksDataTable" class="display">
                 <thead>
                     <tr>
                         <th>Track Name</th>
@@ -108,10 +113,67 @@
         `;
 
         tableContainer.innerHTML = tableHTML;
+
+        // Initialiser DataTable
+        $('#tracksDataTable').DataTable();
     }
 
     // Charger et afficher les pistes
     loadJSON(displayTracks);
+    </script>
+
+    <script>
+        function rgbToArray(rgb) {
+            return rgb.match(/\d+/g).map(Number);
+        }
+
+        function arrayToRgb(arr) {
+            return `rgb(${arr[0]}, ${arr[1]}, ${arr[2]})`;
+        }
+
+        function blendColors(startColor, endColor, progress) {
+            const blended = startColor.map((start, index) => {
+                return Math.round(start + (endColor[index] - start) * progress);
+            });
+            return blended;
+        }
+
+        function getRandomColor() {
+            return [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)];
+        }
+
+        let currentColor1 = getRandomColor();
+        let currentColor2 = getRandomColor();
+        let nextColor1 = getRandomColor();
+        let nextColor2 = getRandomColor();
+        let progress = 0;
+
+        function animateBackground() {
+            const body = document.body;
+
+            // Blend colors based on progress
+            const blendedColor1 = blendColors(currentColor1, nextColor1, progress);
+            const blendedColor2 = blendColors(currentColor2, nextColor2, progress);
+
+            // Apply the new blended colors
+            body.style.background = `linear-gradient(135deg, ${arrayToRgb(blendedColor1)}, ${arrayToRgb(blendedColor2)})`;
+
+            // Increment progress
+            progress += 0.01;
+
+            if (progress >= 1) {
+                // Reset colors once the transition is complete
+                currentColor1 = nextColor1;
+                currentColor2 = nextColor2;
+                nextColor1 = getRandomColor();
+                nextColor2 = getRandomColor();
+                progress = 0;
+            }
+
+            requestAnimationFrame(animateBackground);
+        }
+
+        animateBackground(); // Start the animation
     </script>
 </body>
 </html>
