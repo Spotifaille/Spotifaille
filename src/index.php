@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DevOps</title>
+    <title>Spotifaille</title>
     <link rel="icon" href="/img/Spotifaille.ico">
     <style>
         body {
