@@ -22,6 +22,8 @@
 
 - [src/index.php](https://github.com/a-vtn/DevOps/blob/main/src/index.php): Main page, displaying spotifaille logo
 
+- [docker-composer.yaml](https://github.com/a-vtn/DevOps/blob/main/docker-composer.yaml): Contains Docker volumes configurations
+
 - [Dockerfile](https://github.com/a-vtn/DevOps/blob/main/Dockerfile): Define the docker image, and instructions to build Docker environment
 
 - [prepare-app.sh](https://github.com/a-vtn/DevOps/blob/main/prepare-app.sh): Builds Docker images
@@ -34,3 +36,4 @@
 
 - [stop-app.sh](https://github.com/a-vtn/DevOps/blob/main/stop-app.sh): Stop Docker containers
 
+- [init-mongo.js](https://github.com/a-vtn/DevOps/blob/main/init-mongo.js): Initialisation and configuration of mongoDB
