@@ -1,10 +1,14 @@
+name: spotifaille
 services:
   web:
-    build: .
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
     ports:
       - "8080:80"
     volumes:
       - ./src:/var/www/html
+      - /var/www/html/vendor
     depends_on:
       - db
     environment:
@@ -12,7 +16,6 @@ services:
       - DB_USER=root
       - DB_PASSWORD=rootpassword
       - DB_NAME=Spotifaille
-      - MONGO_URI=mongodb://root:rootpassword@27017
     networks:
       - spotinet
     restart: on-failure
@@ -24,7 +27,9 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=rootpassword
       - MONGO_INITDB_DATABASE=Spotifaille
     volumes:
+      - ./Spotify_songs_attributes.json:/Spotify_songs_attributes.json:ro
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
       - db-data:/data/db
     ports:
       - "27017:27017"
