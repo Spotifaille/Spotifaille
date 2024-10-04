@@ -16,7 +16,8 @@ FROM php:7.4-apache
 
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN pecl install mongodb \
+RUN apt-get update \
+    && pecl install mongodb \
     && docker-php-ext-enable mongodb
 
 # Copy the PHP application to the container

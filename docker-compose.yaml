@@ -13,7 +13,7 @@ services:
       - DB_USER=root
       - DB_PASSWORD=rootpassword
       - DB_NAME=Spotifaille
-      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_URI=mongodb://root:rootpassword@27017
     networks:
       - spotinet
     restart: on-failure

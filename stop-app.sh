@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # stop contaienrs
-docker-compose stop
+docker compose stop
 
 # docker stop spotifaille
 

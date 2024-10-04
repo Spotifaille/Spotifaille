@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # start contaienrs
-docker-compose up -d
+docker compose up -d
 
 # docker run -dp 8080:80 --name spotifaille spotifaille 
 
