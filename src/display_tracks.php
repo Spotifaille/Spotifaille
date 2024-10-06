@@ -12,8 +12,23 @@
 </head>
 <body>
     <h1 class="titleSpot">Spotifaille</h1>
-    <div id="tracks-table"></div>
+    <div class="container">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="tracks-table"></div>
+        <div class="loader2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <a href="index.php" id="back-link">Back to Home</a>
-
 </body>
 </html>
