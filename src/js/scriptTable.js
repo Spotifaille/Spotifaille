@@ -1,16 +1,9 @@
+
 // Fonction pour formater la durée en minutes:secondes
 function formatDuration(duration_ms) {
     const minutes = Math.floor(duration_ms / 60000);
     const seconds = ((duration_ms % 60000) / 1000).toFixed(0);
     return `${minutes}:${seconds.padStart(2, '0')}`;
-}
-
-// Fonction pour charger le fichier JSON
-function loadJSON(callback) {
-    fetch('Spotify_songs_attributes.json')
-        .then(response => response.json())
-        .then(data => callback(data))
-        .catch(error => console.error('Error:', error));
 }
 
 // Fonction pour afficher le tableau des pistes
@@ -51,5 +44,4 @@ function displayTracks(data) {
     $('#tracksDataTable').DataTable();
 }
 
-// Charger et afficher les pistes
-loadJSON(displayTracks);
+

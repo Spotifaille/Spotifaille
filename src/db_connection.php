@@ -11,7 +11,4 @@ $mongoUri = "mongodb://$dbUser:$dbPassword@db:27017/$dbName";
 // connect to the database
 $mongoClient = new MongoDB\Client($mongoUri);
 $collection = $mongoClient->$dbName->music;
-
-// get all the tracks
-$tracks = $collection->find();
 ?>
