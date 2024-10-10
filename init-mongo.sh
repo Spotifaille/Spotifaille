@@ -1,0 +1,1 @@
+mongoimport -u root -p rootpassword --authenticationDatabase "admin" --db Spotifaille --collection music --type json --file ./Spotify_songs_attributes.json --jsonArray
