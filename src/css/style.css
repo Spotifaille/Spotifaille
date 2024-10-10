@@ -135,17 +135,17 @@ box-sizing: border-box;
 }
 
 .loader div {
-/* width: 20px; */
-width: var(--size);
+    /* width: 20px; */
+    width: var(--size);
+    /* height: 20px; */
+    height: var(--size);
+    /* border-radius: 20px; */
+    border-radius: var(--size);
+    background-color: #ffffff;
+}
+.animSound{
+    animation: wave 2s infinite ease-in-out;
 
-/* height: 20px; */
-height: var(--size);
-
-/* border-radius: 20px; */
-border-radius: var(--size);
-
-background-color: #ffffff;
-animation: wave 2s infinite ease-in-out;
 }
 .loader2 div {
     /* width: 20px; */
@@ -158,7 +158,6 @@ animation: wave 2s infinite ease-in-out;
     border-radius: var(--size);
     
     background-color: #ffffff;
-    animation: wave 2s infinite ease-in-out;
     }
 
 @keyframes wave {

@@ -49,12 +49,13 @@ function onPlayerReady(event) {
 
 // Fonction pour rechercher une vidéo YouTube et gérer le bouton play/pause
 function searchYouTubeVideo(query, button) {
-    const apiKey = 'AIzaSyB1g2vq0KkPaeIBfbUOki9bPIXGzZR8XEw';  // Remplace par ta clé API YouTube
+    const apiKey = 'AIzaSyB1g2vq0KkPaeIBfbUOki9bPIXGzZR8XEw';  // Remplace par ta clé API YouTube   AIzaSyDbpBK_4RRUIKxF9c7XGeSN2FTAn6-S9tE
     const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&key=${apiKey}`;
 
     fetch(searchUrl)
     .then(response => response.json())
     .then(data => {
+        console.log('Résultat de la recherche YouTube:', data);
         if (data.items.length > 0) {
             const videoId = data.items[0].id.videoId;
             player.loadVideoById(videoId);  // Charge la nouvelle vidéo dans le lecteur
@@ -74,6 +75,8 @@ function searchYouTubeVideo(query, button) {
 function togglePlayPause(button, query) {
     var playIcon = button.querySelector('.fa-play');
     var pauseIcon = button.querySelector('.fa-pause');
+    const loaderDivs = document.querySelectorAll('.loader > div');
+    const loaderDivs2 = document.querySelectorAll('.loader2 > div');
 
     // Si un autre bouton était en cours de lecture, le remettre à Play et arrêter la vidéo
     if (currentButton && currentButton !== button) {
@@ -85,14 +88,32 @@ function togglePlayPause(button, query) {
         // Charger la nouvelle vidéo si c'est un nouveau bouton
         searchYouTubeVideo(query, button);
         currentButton = button;  // Mettre à jour le bouton en cours
+        loaderDivs.forEach(div => {
+            div.classList.add('animSound');
+        });
+        loaderDivs2.forEach(div => {
+            div.classList.add('animSound');
+        });
     } else {
         // Pause ou reprendre si le même bouton est cliqué
         if (isPlaying) {
             player.pauseVideo();  // Met en pause si la vidéo est en lecture
             updateButtonState(button, false);  // Met à jour l'état du bouton
+            loaderDivs.forEach(div => {
+                div.classList.remove('animSound');
+            });
+            loaderDivs2.forEach(div => {
+                div.classList.remove('animSound');
+            });
         } else {
             player.playVideo();  // Reprendre la lecture si en pause
             updateButtonState(button, true);  // Met à jour l'état du bouton
+            loaderDivs.forEach(div => {
+                div.classList.add('animSound');
+            });
+            loaderDivs.forEach(div => {
+                div.classList.add('animSound');
+            });
         }
     }
 }
