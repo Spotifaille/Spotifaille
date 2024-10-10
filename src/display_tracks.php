@@ -1,7 +1,7 @@
 <?php
 include('db_connection.php');
 // get all the track names
-$tracks = $collection->find([], ['projection' => ['trackName' => 1, 'artistName' => 1, 'genre' => 1, 'duration_ms' => 1, '_id' => 0]]);
+$tracks = $collection->find([]);
 
 // Fonction pour formater la durée en minutes:secondes
 function formatDuration($duration_ms) {
@@ -39,10 +39,10 @@ function formatDuration($duration_ms) {
             </thead>
             <tbody>
             ');
-
+            
             foreach($tracks as $track) {
                 echo("
-                    <tr>
+                    <tr class='track-row' data-track-name='$track->trackName' data-artist-name='$track->artistName'>
                         <td>$track->trackName</td>
                         <td>$track->artistName</td>
                         <td>$track->genre</td>
@@ -59,6 +59,22 @@ function formatDuration($duration_ms) {
     </div>
     <a href="index.php" id="back-link">Back to Home</a>
 
+    <form id="track-form" action="track_details.php" method="POST" style="display: none;">
+        <input type="hidden" name="trackName" id="trackName">
+        <input type="hidden" name="artistName" id="artistName">
+    </form>
+
+    <script>
+        document.querySelectorAll('.track-row').forEach(row => {
+            row.addEventListener('click', function() {
+                const trackName = this.getAttribute('data-track-name');
+                const artistName = this.getAttribute('data-artist-name');
+                document.getElementById('trackName').value = trackName;
+                document.getElementById('artistName').value = artistName;
+                document.getElementById('track-form').submit();
+            });
+        });
+    </script>
 </body>
 </html>
 

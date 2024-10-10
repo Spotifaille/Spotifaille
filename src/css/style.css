@@ -38,7 +38,7 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-#tracks-table {
+#tracks-table, #track-info {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -58,6 +58,9 @@ th, td {
 th {
     background-color: rgba(0, 0, 0, 0.2);
 }
+.track-row {
+    cursor: pointer;
+}
 #back-link {
     margin-top: 20px;
     color: #fff;
@@ -69,6 +72,18 @@ th {
 }
 #back-link:hover {
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+.info-card {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.info-card-col {
+    flex: 1;  
+    min-width: 200px; 
+    margin: 10px;
 }
 
 .titleSpot {

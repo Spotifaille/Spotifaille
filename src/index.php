@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/scriptBG.js"></script>
     <script src="js/scriptRotate.js"></script>
+    <script src="js/waveSbires.js"></script>
 </head>
 <body>
     <div id="menu">
