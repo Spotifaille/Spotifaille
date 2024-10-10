@@ -56,7 +56,10 @@ function formatDuration($duration_ms) {
             foreach($tracks as $track) {
                 echo("
                     <tr>
-                        <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'><i class='fas fa-play'></i></td>
+                        <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'>
+                            <i class='fas fa-play'></i>
+                            <i class='fas fa-pause' style='display:none;'></i>
+                        </td>
                         <td>$track->trackName</td>
                         <td>$track->artistName</td>
                         <td>$track->genre</td>
@@ -78,10 +81,11 @@ function formatDuration($duration_ms) {
             <div></div>
             <div></div>
         </div>
+    </div>
     <div>
         <a href="index.php" id="back-link">Back to Home</a>
     </div>
-    </div>
+    
     <!-- Lecteur YouTube (invisible) -->
   <div id="player"></div>
 
@@ -90,7 +94,6 @@ function formatDuration($duration_ms) {
     <button id="playButton" disabled><i class="fas fa-play"></i></button>
     <button id="pauseButton" disabled><i class="fas fa-pause"></i></button>
   </div>
-
   <!-- API YouTube -->
   </body>
 </html>

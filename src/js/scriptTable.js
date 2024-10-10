@@ -10,5 +10,3 @@ function dataTableInit() {
         "order": [] // Désactiver le tri par défaut
     });
 }
-
-

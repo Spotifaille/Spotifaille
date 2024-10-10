@@ -9,7 +9,6 @@ body {
     align-items: center;
     min-height: 100vh;
     transition: background 4s ease, color 2s ease; /* Smooth background transition with color */
-    overflow: hidden; /* Ensure the wave doesn't cause scrollbars */
 }
 
 @keyframes pulse {
