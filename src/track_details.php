@@ -60,9 +60,9 @@ $artistName = $_POST['artistName'];
             $chunks = array_chunk($info, 10, true);
 
             foreach ($chunks as $index => $chunk) {
-                echo "<div class='info-card-col'";
+                echo "<div class='info-card-col'>";
                 foreach ($chunk as $key => $value) {
-                    echo "<p><strong>" . htmlspecialchars($key) . " :</strong> " . htmlspecialchars($value) . "</p>";
+                    echo "<p class='info-card-row'><strong>" . htmlspecialchars($key) . " :</strong> " . htmlspecialchars($value) . "</p>";
                 }
                 echo '</div>';
             }
