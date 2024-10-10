@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Arial";
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: #fff;
     display: flex;
@@ -78,4 +78,13 @@ th {
 .rotatingImage{
     text-align: center;
     margin-top: 100px;
+}
+
+.play-button{
+    text-align: center;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
 }

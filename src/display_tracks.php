@@ -18,10 +18,13 @@ function formatDuration($duration_ms) {
     <link rel="icon" href="/img/Spotifaille.ico">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
     <script src="js/scriptBG.js"></script>
     <script src="js/scriptTable.js"></script>
+    <script src="js/api.js"></script>
+
 </head>
 <body>
     <h1 class="titleSpot">Spotifaille</h1>
@@ -31,6 +34,7 @@ function formatDuration($duration_ms) {
             <table id="tracksDataTable" class="display">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Track Name</th>
                     <th>Artist Name</th>
                     <th>Genre</th>
@@ -43,6 +47,7 @@ function formatDuration($duration_ms) {
             foreach($tracks as $track) {
                 echo("
                     <tr>
+                        <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'><i class='fas fa-play'></i></td>
                         <td>$track->trackName</td>
                         <td>$track->artistName</td>
                         <td>$track->genre</td>
@@ -58,8 +63,17 @@ function formatDuration($duration_ms) {
         ?>
     </div>
     <a href="index.php" id="back-link">Back to Home</a>
+  <!-- Lecteur YouTube (invisible) -->
+  <div id="player"></div>
 
-</body>
+  <!-- Boutons de contrôle avec icônes -->
+  <div class="control-buttons">
+    <button id="playButton" disabled><i class="fas fa-play"></i></button>
+    <button id="pauseButton" disabled><i class="fas fa-pause"></i></button>
+  </div>
+
+  <!-- API YouTube -->
+  </body>
 </html>
 
 <script>
@@ -67,3 +81,4 @@ document.addEventListener('DOMContentLoaded', function() {
     dataTableInit();
 });
 </script>
+
