@@ -24,6 +24,7 @@ body {
 }
 #menu {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 #menu a {
     color: #fff;
@@ -78,6 +79,7 @@ th {
 .rotatingImage{
     text-align: center;
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .play-button{
@@ -87,4 +89,58 @@ th {
     padding: 10px;
     border: none;
     background-color: transparent;
+
+}
+
+@keyframes moveMinionRed {
+    0% { transform: translateX(0) rotate(0deg); }
+    10% { transform: translateX(10vw) rotate(-20deg); }
+    20% { transform: translateX(20vw) rotate(20deg); }
+    30% { transform: translateX(30vw) rotate(-20deg); }
+    40% { transform: translateX(40vw) rotate(20deg); }
+    50% { transform: translateX(50vw) rotate(-20deg); }
+    60% { transform: translateX(60vw) rotate(20deg); }
+    70% { transform: translateX(70vw) rotate(-20deg); }
+    80% { transform: translateX(80vw) rotate(20deg); }
+    90% { transform: translateX(90vw) rotate(-20deg); }
+    100% { transform: translateX(100vw) rotate(0deg); }
+}
+
+@keyframes moveMinionBlue {
+    0% { transform: translateX(0) rotate(0deg); }
+    10% { transform: translateX(-10vw) rotate(20deg); }
+    20% { transform: translateX(-20vw) rotate(-20deg); }
+    30% { transform: translateX(-30vw) rotate(20deg); }
+    40% { transform: translateX(-40vw) rotate(-20deg); }
+    50% { transform: translateX(-50vw) rotate(20deg); }
+    60% { transform: translateX(-60vw) rotate(-20deg); }
+    70% { transform: translateX(-70vw) rotate(20deg); }
+    80% { transform: translateX(-80vw) rotate(-20deg); }
+    90% { transform: translateX(-90vw) rotate(20deg); }
+    100% { transform: translateX(-100vw) rotate(0deg); }
+}
+
+#wave-container-red, #wave-container-blue {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.minion-red, .minion-blue {
+    transition: transform 10s linear;
+}
+
+.minion-red {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    left: 0; /* Start from the left */
+    animation: moveMinionRed 7s linear forwards; /* Adjust the duration as needed */
+}
+
+.minion-blue {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    right: 0; /* Start from the right */
+    animation: moveMinionBlue 7s linear forwards; /* Adjust the duration as needed */
 }

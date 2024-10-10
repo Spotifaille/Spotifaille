@@ -12,9 +12,10 @@
     <div id="menu">
         <a href="display_tracks.php">View Spotify Tracks</a>
     </div>
+    <div id="wave-container-red"></div>
     <div class="rotatingImage">
         <img id="rotatingImage" src="img/Spotifaille.png" alt="Spotifaille" style="width: 25%; height: auto;">
     </div>
-
+    <div id="wave-container-blue"></div>
 </body>
 </html>
