@@ -19,4 +19,4 @@ jobs:
     - name: start the application
       run: ./start-app.sh
     - name: Test MongoDB connection
-      run: docker-compose exec web php /var/www/html/db_connection.php
+      run: docker compose exec web php /var/www/html/db_connection.php
