@@ -129,7 +129,7 @@ box-sizing: border-box;
 }
 
 .loader {
-    margin: 0 20px;
+    margin: 0 150px;
     --size: 20px;
     display: flex;
     justify-content: center;
@@ -142,7 +142,7 @@ box-sizing: border-box;
 }
 
 .loader2 {
-    margin: 0 20px;
+    margin: 0 150px;
     --size: 20px;
     display: flex;
     justify-content: center;
