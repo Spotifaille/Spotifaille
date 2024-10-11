@@ -3,6 +3,7 @@ on:
   # a pull request.
   push:
     branches:
+      - main
       - master
       - sonar
   pull_request:
