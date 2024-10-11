@@ -55,7 +55,7 @@ function formatDuration($duration_ms) {
 
             foreach($tracks as $track) {
                 echo("
-                    <tr>
+                    <tr class='track-row' data-track-name='$track->trackName' data-artist-name='$track->artistName'>
                         <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'>
                             <i class='fas fa-play'></i>
                             <i class='fas fa-pause' style='display:none;'></i>
@@ -88,11 +88,17 @@ function formatDuration($duration_ms) {
     
     <!-- Lecteur YouTube (invisible) -->
   <div id="player"></div>
+
+  <form id="track-form" action="track_details.php" method="POST" style="display: none;">
+        <input type="hidden" name="trackName" id="trackName">
+        <input type="hidden" name="artistName" id="artistName">
+    </form>
   </body>
 </html>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     dataTableInit();
+    clickRow();
 });
 </script>
