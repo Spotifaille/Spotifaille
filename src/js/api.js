@@ -1,20 +1,20 @@
-var player;
-var isPlaying = false;  // Garde la trace de l'état de lecture
-var currentButton = null;  // Garde une référence du bouton actuellement actif
+let player;
+let isPlaying = false;  // Garde la trace de l'état de lecture
+let currentButton = null;  // Garde une référence du bouton actuellement actif
 
 document.addEventListener('DOMContentLoaded', function() {
     /*---- YouTube API ----*/
 
     // Charge l'API IFrame YouTube de manière asynchrone
-    var tag = document.createElement('script');
+    let tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
+    let firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     document.querySelectorAll('.play-button').forEach(function(cell) {
         cell.addEventListener('click', function() {
-            var trackName = this.getAttribute('data-track');
-            var artistName = this.getAttribute('data-artist');
+            let trackName = this.getAttribute('data-track');
+            let artistName = this.getAttribute('data-artist');
             const query = `${trackName} ${artistName}`;
 
             // Gestion du changement d'icône et du lecteur
@@ -34,7 +34,7 @@ function onYouTubeIframeAPIReady() {
 
 // Fonction pour rechercher une vidéo YouTube et gérer le bouton play/pause
 function searchYouTubeVideo(query, button) {
-    const apiKey = 'AIzaSyB1g2vq0KkPaeIBfbUOki9bPIXGzZR8XEw';  // Remplace par ta clé API YouTube   AIzaSyDbpBK_4RRUIKxF9c7XGeSN2FTAn6-S9tE
+    const apiKey = 'AIzaSyB1g2vq0KkPaeIBfbUOki9bPIXGzZR8XEw';  // Remplace par ta clé API YouTube
     const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&key=${apiKey}`;
 
     fetch(searchUrl)
@@ -55,8 +55,8 @@ function searchYouTubeVideo(query, button) {
 
 // Nouvelle fonction pour gérer le changement d'icône et le contrôle du lecteur
 function togglePlayPause(button, query) {
-    var playIcon = button.querySelector('.fa-play');
-    var pauseIcon = button.querySelector('.fa-pause');
+    let playIcon = button.querySelector('.fa-play');
+    let pauseIcon = button.querySelector('.fa-pause');
     const loaderDivs = document.querySelectorAll('.loader > div');
     const loaderDivs2 = document.querySelectorAll('.loader2 > div');
 
@@ -110,8 +110,8 @@ function resetPreviousButton() {
 
 // Fonction utilitaire pour mettre à jour l'état du bouton (Play ou Pause)
 function updateButtonState(button, isPlayingNow) {
-    var playIcon = button.querySelector('.fa-play');
-    var pauseIcon = button.querySelector('.fa-pause');
+    let playIcon = button.querySelector('.fa-play');
+    let pauseIcon = button.querySelector('.fa-pause');
     
     if (isPlayingNow) {
         playIcon.style.display = 'none';
