@@ -28,6 +28,15 @@ function formatDuration($duration_ms) {
 </head>
 <body>
     <h1 class="titleSpot">Spotifaille</h1>
+    <div class="container">
+        <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
     <div id="tracks-table">
         <?php
             echo('
@@ -43,15 +52,18 @@ function formatDuration($duration_ms) {
             </thead>
             <tbody>
             ');
-            
+
             foreach($tracks as $track) {
                 echo("
-                    <tr class='track-row' data-track-name='$track->trackName' data-artist-name='$track->artistName'>
-                        <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'><i class='fas fa-play'></i></td>
-                        <td class='track-info'>$track->trackName</td>
-                        <td class='track-info'>$track->artistName</td>
-                        <td class='track-info'>$track->genre</td>
-                        <td class='track-info'>". formatDuration(intval($track->duration_ms)) ."</td>
+                    <tr>
+                        <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'>
+                            <i class='fas fa-play'></i>
+                            <i class='fas fa-pause' style='display:none;'></i>
+                        </td>
+                        <td>$track->trackName</td>
+                        <td>$track->artistName</td>
+                        <td>$track->genre</td>
+                        <td>". formatDuration(intval($track->duration_ms)) ."</td>
                     </tr>
                 ");
             };
@@ -62,38 +74,21 @@ function formatDuration($duration_ms) {
             ");
         ?>
     </div>
-    <a href="index.php" id="back-link">Back to Home</a>
-  <!-- Lecteur YouTube (invisible) -->
-  <div id="player"></div>
-
-  <!-- Boutons de contrôle avec icônes -->
-  <div class="control-buttons">
-    <button id="playButton" disabled><i class="fas fa-play"></i></button>
-    <button id="pauseButton" disabled><i class="fas fa-pause"></i></button>
-  </div>
-
-  <!-- API YouTube -->
-
-    <form id="track-form" action="track_details.php" method="POST" style="display: none;">
-        <input type="hidden" name="trackName" id="trackName">
-        <input type="hidden" name="artistName" id="artistName">
-    </form>
+    <div class="loader2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div>
+        <a href="index.php" id="back-link">Back to Home</a>
+    </div>
     
-
-    <script>
-        document.querySelectorAll('.track-row').forEach(row => {
-            row.addEventListener('click', function(event) {
-                if (!event.target.closest('.play-button')) {
-                    const trackName = this.getAttribute('data-track-name');
-                    const artistName = this.getAttribute('data-artist-name');
-                    document.getElementById('trackName').value = trackName;
-                    document.getElementById('artistName').value = artistName;
-                    document.getElementById('track-form').submit();
-                }
-            });
-        });
-    </script>
-</body>
+    <!-- Lecteur YouTube (invisible) -->
+  <div id="player"></div>
+  </body>
 </html>
 
 <script>
@@ -101,4 +96,3 @@ document.addEventListener('DOMContentLoaded', function() {
     dataTableInit();
 });
 </script>
-

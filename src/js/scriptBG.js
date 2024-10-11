@@ -4,6 +4,7 @@ let nextColor1 = getRandomColor();
 let nextColor2 = getRandomColor();
 let progress = 0;
 
+
 function animateBackground() {
     const body = document.body;
 
