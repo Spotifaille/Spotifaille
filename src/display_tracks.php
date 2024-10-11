@@ -1,5 +1,5 @@
 <?php
-include('db_connection.php');
+include_once 'db_connection.php';
 // get all the track names
 $tracks = $collection->find([]);
 
@@ -54,24 +54,23 @@ function formatDuration($duration_ms) {
             ');
 
             foreach($tracks as $track) {
-                echo("
-                    <tr class='track-row' data-track-name='$track->trackName' data-artist-name='$track->artistName'>
-                        <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'>
-                            <i class='fas fa-play'></i>
-                            <i class='fas fa-pause' style='display:none;'></i>
-                        </td>
-                        <td>$track->trackName</td>
-                        <td>$track->artistName</td>
-                        <td>$track->genre</td>
-                        <td>". formatDuration(intval($track->duration_ms)) ."</td>
-                    </tr>
-                ");
+                echo "
+                <tr class='track-row' data-track-name='$track->trackName' data-artist-name='$track->artistName'>
+                    <td class='play-button' data-track='$track->trackName' data-artist='$track->artistName'>
+                        <i class='fas fa-play'></i>
+                        <i class='fas fa-pause' style='display:none;'></i>
+                    </td>
+                    <td>$track->trackName</td>
+                    <td>$track->artistName</td>
+                    <td>$track->genre</td>
+                    <td>". formatDuration(intval($track->duration_ms)) ."</td>
+                </tr>";
             };
 
-            echo("
+            echo "
                 </tbody>
             </table>
-            ");
+            ";
         ?>
     </div>
     <div class="loader2">

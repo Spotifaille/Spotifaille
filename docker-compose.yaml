@@ -43,6 +43,4 @@ volumes:
 networks:
   spotinet:
 
-name: Official SonarQube Scan
-uses: SonarSource/sonarqube-scan-action@v3.0.0
           

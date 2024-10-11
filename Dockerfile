@@ -12,10 +12,10 @@ COPY src/ /var/www/html/
 WORKDIR /var/www/html
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-RUN composer require mongodb/mongodb
-RUN composer install
 
-RUN chown -R www-data:www-data /var/www/html \
+RUN composer require mongodb/mongodb \ 
+    && composer install \ 
+    && chown -R www-data:www-data /var/www/html \
     && find /var/www/html -type d -exec chmod 755 {} \; \
     && find /var/www/html -type f -exec chmod 644 {} \;
 
