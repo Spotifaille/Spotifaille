@@ -1,5 +1,5 @@
 <?php
-include('db_connection.php');
+include_once 'db_connection.php';
 # Lire les données dans le POST vérifie avec des isset sinon renvoie sur le display_tracks
 if (!isset($_POST['trackName']) || !isset($_POST['artistName'])) {
     header('Location: display_tracks.php');
@@ -23,8 +23,8 @@ $artistName = $_POST['artistName'];
     <script src="js/scriptTable.js"></script>
 </head>
 <body>
-    <h1 class="titleSpot"><?php echo($trackName); ?></h1>
-    <h2 class="artistName"><?php echo($artistName); ?></h2>
+    <h1 class="titleSpot"><?php htmlspecialchars($trackName); ?></h1>
+    <h2 class="artistName"><?php htmlspecialchars($artistName); ?></h2>
     <div id="track-info">
         <?php
         $track = $collection->findOne([
