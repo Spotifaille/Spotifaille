@@ -7,13 +7,13 @@
 Répertoire et lecteur de musiques Spotify provenant d'un jeu de données disponible sur [Kaggle](https://www.kaggle.com/datasets/byomokeshsenapati/spotify-song-attributes "Kaggle") fortement inspiré par le thème de la Faille de l'invocateur.
 
 <p align="center" width="100%">
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee"/>
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee" width="50"/>
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee" width="50"/>
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_canon.png?raw=true" alt="bleu_sbire_canon" width="50"/>
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
-	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee" width="50"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee" width="50"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_canon.png?raw=true" alt="bleu_sbire_canon" width="50"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
+	<img width="12%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
 </p>
 
 Petit projet conçu pour illustrer nos compétences sur des outils de gestion de projet DevOps tels que Jira, Docker, GitHub Action, MongoDB, Sonar... 
