@@ -105,7 +105,6 @@ function resetPreviousButton() {
         currentButton = null;  // Réinitialise le bouton actif
     }
 }
-
 // Fonction utilitaire pour mettre à jour l'état du bouton (Play ou Pause)
 function updateButtonState(button, isPlayingNow) {
     let playIcon = button.querySelector('.fa-play');
