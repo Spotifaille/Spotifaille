@@ -1,39 +1,42 @@
-# How to use
+# Bienvenue sur Spotifaille ! 😎
 
-- Execute [prepare-app.sh] to build Docker images
+<img src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/Spotifaille.png?raw=true" alt="spotifaille_logo" width="200"/>
 
-- Execute [start-app.sh] to start Docker containers
+## À propos du projet
 
-- Execute [stop-app.sh] to stop Docker containers
+Répertoire et lecteur de musiques Spotify provenant d'un jeu de données disponible sur [Kaggle](https://www.kaggle.com/datasets/byomokeshsenapati/spotify-song-attributes "Kaggle") fortement inspiré par le thème de la Faille de l'invocateur.
 
-- **When you are done**, Execute [remove-app.sh] to remove Docker containers, networks and volumes
+<p align="center" width="100%">
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee"/>
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee" width="50"/>
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_melee.png?raw=true" alt="bleu_sbire_melee" width="50"/>
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_canon.png?raw=true" alt="bleu_sbire_canon" width="50"/>
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
+	<img width="14%" src="https://github.com/Spotifaille/Spotifaille/blob/main/src/img/bleu_sbire_mage.png?raw=true" alt="bleu_sbire_mage" width="50"/>
+</p>
 
+Petit projet conçu pour illustrer nos compétences sur des outils de gestion de projet DevOps tels que Jira, Docker, GitHub Action, MongoDB, Sonar... 
 
+> *« Si c'est toi qui paie, ça roule pour moi ! » 🍺*
 
-# File decriptions
+## Fonctionnalités
 
-- [src/script/script.js](https://github.com/a-vtn/DevOps/blob/main/src/script/script.js): Contains scripts used in other files
+- 🎵 Affichage des pistes Spotify à partir de données JSON
+- 📊 Visualisation des attributs des chansons
+- ▶️ Lecture des musiques directement depuis le site grâce à l'API YouTube
+- 🛠️ Scripts pratiques pour gérer l'application
 
-- [src/style/style.css](https://github.com/a-vtn/DevOps/blob/main/src/style/style.css): Contains the main style used in other files
+## Comment démarrer
 
-- [src/Spotify_songs_attributes.json](https://github.com/a-vtn/DevOps/blob/main/src/Spotify_songs_attributes.json): Json file containing spotify tracks information
+1. Clonez le dépôt avec SSH :
+    ```sh
+    git clone git@github.com:Spotifaille/Spotifaille.git
+    ```
 
-- [src/display_tracks.php](https://github.com/a-vtn/DevOps/blob/main/src/display_tracks.php): Page displaying the tracks information
+2. Démarrez l'application :
+    ```sh
+    ./start-app.sh
+    ```
 
-- [src/index.php](https://github.com/a-vtn/DevOps/blob/main/src/index.php): Main page, displaying spotifaille logo
-
-- [docker-composer.yaml](https://github.com/a-vtn/DevOps/blob/main/docker-composer.yaml): Contains Docker volumes configurations
-
-- [Dockerfile](https://github.com/a-vtn/DevOps/blob/main/Dockerfile): Define the docker image, and instructions to build Docker environment
-
-- [prepare-app.sh](https://github.com/a-vtn/DevOps/blob/main/prepare-app.sh): Builds Docker images
-
-- [remove-app.sh](https://github.com/a-vtn/DevOps/blob/main/remove-app.sh): Remove Docker containers, networks and volumes
-
-- [restart.sh](https://github.com/a-vtn/DevOps/blob/main/restart.sh): Restart the Docker application
-
-- [start-app.sh](https://github.com/a-vtn/DevOps/blob/main/start-app.sh): Start Docker containers
-
-- [stop-app.sh](https://github.com/a-vtn/DevOps/blob/main/stop-app.sh): Stop Docker containers
-
-- [init-mongo.js](https://github.com/a-vtn/DevOps/blob/main/init-mongo.js): Initialisation and configuration of mongoDB
+3. Profitez de l'application sur votre navigateur préféré à l'adresse `http://localhost:8080` ! 🌐
