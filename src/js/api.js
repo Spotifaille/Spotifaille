@@ -55,8 +55,6 @@ function searchYouTubeVideo(query, button) {
 
 // Nouvelle fonction pour gérer le changement d'icône et le contrôle du lecteur
 function togglePlayPause(button, query) {
-    let playIcon = button.querySelector('.fa-play');
-    let pauseIcon = button.querySelector('.fa-pause');
     const loaderDivs = document.querySelectorAll('.loader > div');
     const loaderDivs2 = document.querySelectorAll('.loader2 > div');
 
