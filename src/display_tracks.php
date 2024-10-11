@@ -88,13 +88,6 @@ function formatDuration($duration_ms) {
     
     <!-- Lecteur YouTube (invisible) -->
   <div id="player"></div>
-
-  <!-- Boutons de contrôle avec icônes -->
-  <div class="control-buttons">
-    <button id="playButton" disabled><i class="fas fa-play"></i></button>
-    <button id="pauseButton" disabled><i class="fas fa-pause"></i></button>
-  </div>
-  <!-- API YouTube -->
   </body>
 </html>
 
