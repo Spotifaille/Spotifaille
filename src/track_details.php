@@ -23,8 +23,8 @@ $artistName = $_POST['artistName'];
     <script src="js/scriptTable.js"></script>
 </head>
 <body>
-    <h1 class="titleSpot"><?php htmlspecialchars($trackName); ?></h1>
-    <h2 class="artistName"><?php htmlspecialchars($artistName); ?></h2>
+    <h1 class="titleSpot"><?php echo htmlspecialchars($trackName); ?></h1>
+    <h2 class="artistName"><?php echo htmlspecialchars($artistName); ?></h2>
     <div id="track-info">
         <?php
         $track = $collection->findOne([
